@@ -183,7 +183,7 @@ The complete Machine Learning workflow is available in the notebook.
 ### Clone Repository
 
 ```bash
-git clone YOUR_REPOSITORY_LINK
+[git clone YOUR_REPOSITORY_LINK](https://github.com/vikasdangi256/SuperStore-Sales-Analytics)
 ```
 
 ### Open Project
@@ -223,7 +223,7 @@ python app.py
 
 🔗 GitHub: https://github.com/vikasdangi256
 
-🔗 LinkedIn: YOUR_LINKEDIN_PROFILE
+🔗 LinkedIn: [YOUR_LINKEDIN_PROFILE](https://www.linkedin.com/in/vikas-dangi-753a03317/)
 
 ---
 
