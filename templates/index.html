@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Store Sales </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+    <h1>Welcome to Superstore Sales Prediction</h1>
+    
+
+    <div class="container">
+
+        <form action="/predict" method="POST">
+            <form action="/predict" method="POST">
+                <label>Ship Mode</label>
+                <select name="ship_mode" required>
+                    <option value="">Select Ship Mode</option>
+                    <option value="First Class">First Class</option>
+                    <option value="Same Day">Same Day</option>
+                    <option value="Second Class">Second Class</option>
+                    <option value="Standard Class">Standard Class</option>
+                </select>
+
+                <label>Segment</label>
+                <select name="segment" required>
+                    <option value="">Select Segment</option>
+                    <option value="Consumer">Consumer</option>
+                    <option value="Corporate">Corporate</option>
+                    <option value="Home Office">Home Office</option>
+                </select>
+
+                <label>Region</label>
+                <select name="region" required>
+                    <option value="">Select Region</option>
+                    <option value="Central">Central</option>
+                    <option value="East">East</option>
+                    <option value="South">South</option>
+                    <option value="West">West</option>
+                </select>
+
+                <label>Category</label>
+
+                <select name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Office Supplies">Office Supplies</option>
+                    <option value="Technology">Technology</option>
+                </select>
+
+                <label>Sub Category</label>
+
+                <select name="sub_category" required>
+                    <option value="">Select Sub Category</option>
+
+                    <option value="Accessories">Accessories</option>
+                    <option value="Appliances">Appliances</option>
+                    <option value="Art">Art</option>
+                    <option value="Binders">Binders</option>
+                    <option value="Bookcases">Bookcases</option>
+                    <option value="Chairs">Chairs</option>
+                    <option value="Copiers">Copiers</option>
+                    <option value="Envelopes">Envelopes</option>
+                    <option value="Fasteners">Fasteners</option>
+                    <option value="Furnishings">Furnishings</option>
+                    <option value="Labels">Labels</option>
+                    <option value="Machines">Machines</option>
+                    <option value="Paper">Paper</option>
+                    <option value="Phones">Phones</option>
+                    <option value="Storage">Storage</option>
+                    <option value="Supplies">Supplies</option>
+                    <option value="Tables">Tables</option>
+
+                </select>
+
+                <label>Shipping Days</label>
+                <input type="number" name="shipping_days" required>
+
+                <label>Order Year</label>
+                <input type="number" name="order_year" required>
+
+                <label>Order Month</label>
+                <input type="number" name="order_month" min="1" max="12" required>
+
+                <label>Order Day</label>
+                <input type="number" name="order_day" min="1" max="31" required>
+
+                <label>Weekday</label>
+                <select name="weekday" required>
+                    <option value="">Select Weekday</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
+
+                <label>State</label>
+                <select name="state">
+                    {% for state in states %}
+                    <option value="{{ state }}">{{ state }}</option>
+                    {% endfor %}
+                </select>
+
+                <label>City</label>
+                <select name="city">
+                    {% for city in cities %}
+                    <option value="{{ city }}">{{ city }}</option>
+
+                    {% endfor %}
+
+                </select>
+
+
+
+
+                <button type="submit">
+                    Predict Sales
+                </button>
+
+                {% if prediction %}
+                <h2>Predicted Sales: ${{ prediction }}</h2>
+
+                {% endif %}
+
+
+            </form>
+        </form>
+    </div>
+
+
+</body>
+
+</html>
